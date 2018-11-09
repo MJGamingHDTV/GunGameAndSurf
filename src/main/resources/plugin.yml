@@ -1,0 +1,8 @@
+name: GunGameAndSurf
+main: main.de.mj.bb.ggandsurf.GunGameAndSurf
+version: ${project.version}
+authors: [GoodyFX, MJ]
+depend: [BBCoreSpigot]
+commands:
+  setspawn:
+  spawn:

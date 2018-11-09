@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GunGameAndSurf">
+    <output-path>$PROJECT_DIR$/out/artifacts/GunGameAndSurf</output-path>
+    <root id="archive" name="GunGameAndSurf.jar">
+      <element id="module-output" name="GunGameAndSurf" />
+    </root>
+  </artifact>
+</component>
