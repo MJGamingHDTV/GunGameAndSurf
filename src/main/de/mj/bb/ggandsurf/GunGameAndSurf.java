@@ -4,8 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import main.de.mj.bb.core.CoreSpigot;
 import main.de.mj.bb.core.mysql.ColumnType;
+import main.de.mj.bb.ggandsurf.commands.BuildCommand;
 import main.de.mj.bb.ggandsurf.commands.SetSpawnCommand;
 import main.de.mj.bb.ggandsurf.commands.SpawnCommand;
+import main.de.mj.bb.ggandsurf.listener.BuildListener;
 import main.de.mj.bb.ggandsurf.listener.DeathListener;
 import main.de.mj.bb.ggandsurf.listener.JoinQuitListener;
 import main.de.mj.bb.ggandsurf.listener.WaterListener;
@@ -31,6 +33,7 @@ public class GunGameAndSurf extends JavaPlugin {
     private GameType gameType;
     private FileManager fileManager;
     private ScoreBoardManager scoreBoardManager;
+    private BuildCommand buildCommand;
 
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage("[GunGameAndSurf] is starting...");
@@ -48,6 +51,8 @@ public class GunGameAndSurf extends JavaPlugin {
         fileManager = new FileManager(this);
         fileManager.loadDefaultConfig();
         fileManager.loadLocationFile();
+        buildCommand = new BuildCommand(this);
+        new BuildListener(this);
         createTables();
         new SetSpawnCommand(this);
         new SpawnCommand(this);
